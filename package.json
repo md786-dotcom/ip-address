@@ -1,0 +1,19 @@
+{
+  "name": "ipscope-tracker",
+  "version": "1.0.0",
+  "description": "IPScope - Track Any IP Address Instantly",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "ip-tracker",
+    "geolocation",
+    "leaflet",
+    "frontend"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "homepage": "https://github.com/md786-dotcom/ip-address"
+}

@@ -1,40 +1,26 @@
-# Design files (please do not remove 🙂)
-*.sketch
-*.fig
-*.xd
-
 # Dependencies
-/node_modules
-/.pnp
-.pnp.js
-yarn.debug.log*
-yarn.error.log*
-npm-debug.log*
-
-# Environment and secrets
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+node_modules/
 
 # Testing
-/coverage
+*.bak
+test-*.js
 
-# Production
-/build
-/dist
-/.next
-/out
+# OS files
+.DS_Store
+Thumbs.db
 
-# IDEs and editors
-/.idea
-/.vscode
+# Editor files
+.vscode/
+.idea/
 *.swp
 *.swo
 
-# Misc
+# Logs
 *.log
-*.pem
-.DS_Store
-Thumbs.db
+
+# Environment files
+.env
+.env.local
+
+# Vercel
+.vercel
