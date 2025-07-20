@@ -65,10 +65,18 @@ async function searchIPOrDomain(query) {
 }
 
 function updateUI(data) {
-    document.getElementById('ip-address').textContent = data.ip;
-    document.getElementById('location').textContent = `${data.location.city}, ${data.location.region} ${data.location.postalCode}`;
-    document.getElementById('timezone').textContent = `UTC ${data.location.timezone}`;
-    document.getElementById('isp').textContent = data.isp;
+    // Add loading animation
+    const values = document.querySelectorAll('.info-value');
+    values.forEach(val => val.classList.add('loading'));
+    
+    setTimeout(() => {
+        document.getElementById('ip-address').textContent = data.ip;
+        document.getElementById('location').textContent = `${data.location.city}, ${data.location.region} ${data.location.postalCode}`;
+        document.getElementById('timezone').textContent = `UTC ${data.location.timezone}`;
+        document.getElementById('isp').textContent = data.isp;
+        
+        values.forEach(val => val.classList.remove('loading'));
+    }, 300);
 }
 
 function updateMap(lat, lng) {
