@@ -29,7 +29,7 @@ body {
 .header {
     background: var(--primary-gradient);
     min-height: 280px;
-    padding: 40px 24px 120px;
+    padding: 40px 24px 160px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -147,11 +147,8 @@ h1 {
     border-radius: 20px;
     padding: 32px;
     max-width: 1110px;
-    margin: 0 auto;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 280px;
+    margin: -80px auto 0;
+    position: relative;
     z-index: 1000;
     box-shadow: var(--shadow-xl);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -204,12 +201,11 @@ h1 {
 }
 
 #map {
-    height: 100vh;
+    height: calc(100vh - 280px);
     position: relative;
     z-index: 1;
     filter: brightness(0.8) contrast(1.1);
-    margin-top: -150px;
-    padding-top: 150px;
+    margin-top: 200px;
 }
 
 .attribution {
@@ -264,10 +260,6 @@ h1 {
     .info-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .info-container {
-        top: 300px;
-    }
 }
 
 @media (min-width: 1024px) {
@@ -290,7 +282,7 @@ h1 {
 
     .info-container {
         padding: 40px;
-        top: 250px;
+        margin: -100px auto 0;
     }
 
     .info-grid {
