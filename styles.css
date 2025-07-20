@@ -23,17 +23,15 @@ body {
     font-size: 18px;
     min-height: 100vh;
     position: relative;
-    background: var(--dark-bg);
 }
 
 .header {
     background: var(--primary-gradient);
     min-height: 280px;
-    padding: 40px 24px 160px;
+    padding: 30px 24px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-    z-index: 10;
 }
 
 .header::before {
@@ -72,28 +70,28 @@ body {
 h1 {
     color: var(--text-white);
     font-weight: 700;
-    font-size: 36px;
+    font-size: 32px;
     letter-spacing: -1px;
 }
 
 .tagline {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 16px;
-    margin-bottom: 35px;
+    font-size: 14px;
+    margin-bottom: 25px;
     position: relative;
     z-index: 1;
 }
 
 .search-container {
     max-width: 555px;
-    margin: 0 auto 40px;
+    margin: 0 auto 24px;
     position: relative;
     z-index: 1;
 }
 
 .search-input {
     width: 100%;
-    padding: 20px 24px;
+    padding: 18px 24px;
     border: none;
     border-radius: 50px;
     font-size: 18px;
@@ -122,12 +120,12 @@ h1 {
     background: var(--secondary-gradient);
     border: none;
     border-radius: 50%;
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
     cursor: pointer;
     transition: all 0.3s ease;
     color: var(--text-white);
-    font-size: 20px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,59 +142,50 @@ h1 {
 
 .info-container {
     background: var(--card-bg);
-    border-radius: 20px;
-    padding: 32px;
+    border-radius: 15px;
+    padding: 26px 24px;
     max-width: 1110px;
-    margin: -80px auto 0;
+    margin: 0 auto;
     position: relative;
     z-index: 1000;
     box-shadow: var(--shadow-xl);
+    transform: translateY(50%);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
 }
 
 .info-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 24px;
     text-align: center;
 }
 
 .info-item {
     position: relative;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    transition: all 0.3s ease;
-}
-
-.info-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-2px);
 }
 
 .info-label {
     color: var(--text-light);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .info-label i {
     color: var(--accent-color);
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .info-value {
     color: var(--text-white);
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 500;
     line-height: 1.2;
 }
 
@@ -204,41 +193,43 @@ h1 {
     height: calc(100vh - 280px);
     position: relative;
     z-index: 1;
-    filter: brightness(0.8) contrast(1.1);
-    margin-top: 200px;
+    filter: brightness(0.9);
 }
 
 .attribution {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1001;
     text-align: center;
     color: var(--text-light);
-    font-size: 14px;
+    font-size: 12px;
+    background: rgba(26, 26, 46, 0.8);
+    padding: 5px 15px;
+    border-radius: 20px;
 }
 
 .attribution p {
-    margin: 5px 0;
+    margin: 2px 0;
 }
 
 .social-links {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .social-links a {
     color: var(--text-light);
-    font-size: 18px;
+    font-size: 16px;
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
     color: var(--accent-color);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 /* Loading animation */
@@ -264,25 +255,26 @@ h1 {
 
 @media (min-width: 1024px) {
     .header {
-        min-height: 300px;
-        padding: 50px 24px 0;
+        min-height: 280px;
+        padding: 33px 24px 0;
     }
 
     h1 {
-        font-size: 48px;
+        font-size: 42px;
     }
 
     .brand-icon {
-        font-size: 50px;
+        font-size: 48px;
     }
 
     .tagline {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 30px;
     }
 
     .info-container {
-        padding: 40px;
-        margin: -100px auto 0;
+        padding: 37px 32px;
+        border-radius: 15px;
     }
 
     .info-grid {
@@ -290,34 +282,29 @@ h1 {
         text-align: left;
     }
 
-    .info-item {
-        padding: 0;
-        background: none;
-    }
-
-    .info-item:hover {
-        background: none;
-        transform: none;
-    }
-
     .info-item:not(:last-child)::after {
         content: '';
         position: absolute;
-        right: -15px;
+        right: 0;
         top: 50%;
         transform: translateY(-50%);
         height: 75px;
         width: 1px;
-        background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+        background: rgba(255, 255, 255, 0.15);
     }
 
     .info-label {
-        font-size: 14px;
+        font-size: 12px;
+        margin-bottom: 13px;
         justify-content: flex-start;
     }
 
+    .info-label i {
+        font-size: 14px;
+    }
+
     .info-value {
-        font-size: 28px;
+        font-size: 26px;
     }
 }
 
