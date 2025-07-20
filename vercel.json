@@ -1,38 +1,9 @@
 {
-  "name": "ipscope-tracker",
   "version": 2,
   "builds": [
     {
-      "src": "**/*",
+      "src": "**",
       "use": "@vercel/static"
     }
-  ],
-  "routes": [
-    {
-      "src": "/images/(.*)",
-      "dest": "/images/$1"
-    },
-    {
-      "src": "/(.*)\.(css|js|png|jpg|jpeg|gif|svg|ico)",
-      "dest": "/$1"
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)\.(css|js|png|jpg|jpeg|gif|svg|ico)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ],
-  "github": {
-    "silent": true
-  }
+  ]
 }
