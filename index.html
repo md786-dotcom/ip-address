@@ -14,25 +14,27 @@
 </head>
 <body>
 
-  <div class="header">
-    <div class="brand">
-      <i class="fas fa-globe-americas brand-icon"></i>
-      <h1>IPScope</h1>
+  <div class="header-wrapper">
+    <div class="header">
+      <div class="brand">
+        <i class="fas fa-globe-americas brand-icon"></i>
+        <h1>IPScope</h1>
+      </div>
+      <p class="tagline">Discover the location behind any IP address</p>
+      
+      <form id="search-form" class="search-container">
+        <input 
+          type="text" 
+          id="search-input"
+          class="search-input" 
+          placeholder="Search for any IP address or domain"
+          aria-label="Search for any IP address or domain"
+        >
+        <button type="submit" class="search-button" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
     </div>
-    <p class="tagline">Discover the location behind any IP address</p>
-    
-    <form id="search-form" class="search-container">
-      <input 
-        type="text" 
-        id="search-input"
-        class="search-input" 
-        placeholder="Search for any IP address or domain"
-        aria-label="Search for any IP address or domain"
-      >
-      <button type="submit" class="search-button" aria-label="Search">
-        <i class="fas fa-search"></i>
-      </button>
-    </form>
     
     <div class="info-container">
       <div class="info-grid">

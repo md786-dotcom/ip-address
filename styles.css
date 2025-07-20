@@ -23,12 +23,19 @@ body {
     font-size: 18px;
     min-height: 100vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-wrapper {
+    position: relative;
+    flex-shrink: 0;
+    background: var(--primary-gradient);
+    padding-bottom: 60px;
 }
 
 .header {
-    background: var(--primary-gradient);
-    min-height: 280px;
-    padding: 30px 24px 0;
+    padding: 30px 24px 40px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -146,11 +153,14 @@ h1 {
     padding: 26px 24px;
     max-width: 1110px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1000;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
     box-shadow: var(--shadow-xl);
-    transform: translateY(50%);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    width: calc(100% - 48px);
 }
 
 .info-grid {
@@ -190,10 +200,13 @@ h1 {
 }
 
 #map {
-    height: calc(100vh - 280px);
+    flex: 1;
     position: relative;
+    width: 100%;
     z-index: 1;
     filter: brightness(0.9);
+    min-height: 400px;
+    margin-top: 60px;
 }
 
 .attribution {
@@ -255,8 +268,11 @@ h1 {
 
 @media (min-width: 1024px) {
     .header {
-        min-height: 280px;
-        padding: 33px 24px 0;
+        padding: 33px 24px 40px;
+    }
+    
+    .header-wrapper {
+        padding-bottom: 80px;
     }
 
     h1 {
@@ -275,6 +291,9 @@ h1 {
     .info-container {
         padding: 37px 32px;
         border-radius: 15px;
+        width: calc(100% - 48px);
+        max-width: 1110px;
+        bottom: -70px;
     }
 
     .info-grid {
@@ -305,6 +324,10 @@ h1 {
 
     .info-value {
         font-size: 26px;
+    }
+    
+    #map {
+        margin-top: 80px;
     }
 }
 

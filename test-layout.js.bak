@@ -1,0 +1,66 @@
+// Layout test script
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        const searchInput = document.querySelector('.search-input');
+        const infoContainer = document.querySelector('.info-container');
+        const map = document.querySelector('#map');
+        
+        if (!searchInput || !infoContainer || !map) {
+            console.error('Missing elements for layout test');
+            return;
+        }
+        
+        const searchRect = searchInput.getBoundingClientRect();
+        const infoRect = infoContainer.getBoundingClientRect();
+        const mapRect = map.getBoundingClientRect();
+        
+        // Check for overlaps
+        const searchInfoGap = infoRect.top - searchRect.bottom;
+        const infoMapGap = mapRect.top - infoRect.bottom;
+        
+        const hasSearchOverlap = searchInfoGap < 0;
+        const hasMapOverlap = infoMapGap < 0;
+        
+        // Create result div
+        const resultDiv = document.createElement('div');
+        resultDiv.style.cssText = `
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 15px;
+            background: ${hasSearchOverlap || hasMapOverlap ? '#ff4444' : '#44ff44'};
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            z-index: 10000;
+            font-family: monospace;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        `;
+        
+        if (hasSearchOverlap || hasMapOverlap) {
+            resultDiv.innerHTML = `
+                FAIL - Overlaps detected!<br>
+                Search→Info gap: ${searchInfoGap.toFixed(1)}px<br>
+                Info→Map gap: ${infoMapGap.toFixed(1)}px
+            `;
+        } else {
+            resultDiv.innerHTML = `
+                PASS - No overlaps!<br>
+                Search→Info gap: ${searchInfoGap.toFixed(1)}px<br>
+                Info→Map gap: ${infoMapGap.toFixed(1)}px
+            `;
+        }
+        
+        document.body.appendChild(resultDiv);
+        
+        // Log to console
+        console.log('Layout Test Results:');
+        console.log('Search Input Bottom:', searchRect.bottom);
+        console.log('Info Container Top:', infoRect.top);
+        console.log('Info Container Bottom:', infoRect.bottom);
+        console.log('Map Top:', mapRect.top);
+        console.log('Search→Info Gap:', searchInfoGap);
+        console.log('Info→Map Gap:', infoMapGap);
+        console.log('Test Result:', hasSearchOverlap || hasMapOverlap ? 'FAIL' : 'PASS');
+    }, 1000); // Wait for any animations to complete
+});
