@@ -25,6 +25,8 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .header-wrapper {
@@ -260,9 +262,176 @@ h1 {
 }
 
 /* Media Queries */
-@media (min-width: 768px) {
+
+/* Mobile styles (max-width: 767px) */
+@media (max-width: 767px) {
+    body {
+        font-size: 16px;
+        overflow-x: hidden;
+    }
+    
+    .header-wrapper {
+        padding-bottom: 40px;
+    }
+    
+    .header {
+        padding: 20px 16px 30px;
+    }
+    
+    .brand {
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+    
+    .brand-icon {
+        font-size: 32px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .tagline {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .search-container {
+        margin: 0 auto 20px;
+    }
+    
+    .search-input {
+        padding: 14px 20px;
+        font-size: 16px;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    
+    .search-button {
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .info-container {
+        position: static;
+        transform: none;
+        width: calc(100% - 32px);
+        margin: -30px auto 0;
+        padding: 20px 16px;
+        border-radius: 12px;
+    }
+    
+    .info-grid {
+        gap: 16px;
+    }
+    
+    .info-label {
+        font-size: 9px;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+    
+    .info-label i {
+        font-size: 10px;
+    }
+    
+    .info-value {
+        font-size: 16px;
+    }
+    
+    #map {
+        margin-top: 20px;
+        min-height: 300px;
+    }
+    
+    .attribution {
+        font-size: 10px;
+        padding: 4px 12px;
+        bottom: 5px;
+    }
+    
+    .social-links a {
+        font-size: 14px;
+    }
+}
+
+/* Very small mobile screens (max-width: 375px) */
+@media (max-width: 375px) {
+    h1 {
+        font-size: 22px;
+    }
+    
+    .brand-icon {
+        font-size: 28px;
+    }
+    
+    .search-input {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    .search-button {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    .info-value {
+        font-size: 14px;
+        word-break: break-all;
+    }
+    
+    .info-label {
+        font-size: 8px;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header {
+        padding: 25px 20px 35px;
+    }
+    
+    .brand-icon {
+        font-size: 36px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    .search-input {
+        padding: 16px 22px;
+    }
+    
+    .search-button {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .info-container {
+        padding: 24px 20px;
+        bottom: -60px;
+    }
+    
     .info-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .info-label {
+        font-size: 11px;
+    }
+    
+    .info-value {
+        font-size: 22px;
+    }
+    
+    #map {
+        margin-top: 70px;
+        min-height: 350px;
     }
 }
 
